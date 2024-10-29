@@ -73,6 +73,4 @@ def predict(id_: str, question: str) -> pl.DataFrame:
     except:
         print('error')
     return pl.DataFrame({'id': [id_], 'answer': [answer]})
-df = pd.read_csv('reference.csv')
-df['answer'] = df.apply(lambda row: predict(row['id'], row['problem']), axis=1)
-df.to_csv('results2.csv', index=False)
+# Load the reference data
